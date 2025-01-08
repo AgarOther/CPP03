@@ -19,4 +19,7 @@ int main(void)
 	logan.attack("Paul");
 	logan.takeDamage(5);
 	logan.beRepaired(5);
+	logan.takeDamage(10);
+	logan.beRepaired(5);
+	logan.attack("Paul");
 }
