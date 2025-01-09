@@ -6,17 +6,20 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:57:28 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/08 13:08:58 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:12:26 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap logan("Logan");
+	ScavTrap logan("Logan");
 
 	logan.attack("Paul");
 	logan.takeDamage(5);
+	ScavTrap copy(logan);
 	logan.beRepaired(5);
+	copy.beRepaired(5);
+	copy.takeDamage(4000);
 }
