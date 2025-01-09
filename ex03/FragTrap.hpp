@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 12:57:28 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 13:18:30 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 12:37:56 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 13:02:47 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
 
-int main(void)
+class FragTrap : virtual public ClapTrap
 {
-	ScavTrap logan("Logan");
+	public:
+		FragTrap();
+		FragTrap(const FragTrap &copy);
+		FragTrap &operator=(FragTrap const &obj);
+		~FragTrap();
 
-	logan.attack("Paul");
-	logan.takeDamage(5);
-	ScavTrap copy(logan);
-	logan.beRepaired(5);
-	copy.beRepaired(5);
-	copy.takeDamage(4000);
-	copy.guardGate();
-	copy.guardGate();
-}
+		FragTrap(const std::string &name);
+
+		void highFivesGuys();
+};
+
+#endif
